@@ -1,0 +1,149 @@
+/* Page background */
+.breedinfo-container {
+  min-height: 100vh;
+  padding: 40px 60px;
+  background: linear-gradient(to right, #f4f7f9, #e8f5e9);
+}
+
+/* Grid layout */
+.breed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+/* Card styling */
+.breed-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  
+  /* Animation */
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeSlideUp 0.8s ease forwards;
+}
+
+/* Stagger animation delay */
+.breed-card:nth-child(1) { animation-delay: 0.1s; }
+.breed-card:nth-child(2) { animation-delay: 0.2s; }
+.breed-card:nth-child(3) { animation-delay: 0.3s; }
+.breed-card:nth-child(4) { animation-delay: 0.4s; }
+.breed-card:nth-child(5) { animation-delay: 0.5s; }
+.breed-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Hover effect */
+.breed-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.breed-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: transform 0.4s ease;
+}
+
+/* Image zoom on hover */
+.breed-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Title */
+.breed-card h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #2e7d32;
+}
+
+/* Text */
+.breed-card p {
+  margin: 6px 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.breed-card h2 {
+  color: #000;
+}
+
+.breed-card strong {
+  color: #000;
+}
+
+.modal-content {
+  color: #000;
+}
+
+/* Keyframes */
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+  z-index: 1000;
+}
+
+/* Modal Box */
+.modal-content {
+  background: white;
+  width: 90%;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 20px;
+  position: relative;
+  animation: scaleUp 0.3s ease;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #2e7d32;
+}
+
+/* Modal Image */
+.modal-image {
+  width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

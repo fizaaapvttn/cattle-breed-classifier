@@ -1,0 +1,52 @@
+{
+  "animal": {
+    "0": "cattle",
+    "1": "buffalo"
+  },
+
+  "cattle": {
+    "0": "amritmahal",
+    "1": "ayrshire",
+    "2": "bargur",
+    "3": "brown_swiss",
+    "4": "dangi",
+    "5": "deoni",
+    "6": "gir",
+    "7": "guernsey",
+    "8": "hallikar",
+    "9": "hariana",
+    "10": "holstein-friesian",
+    "11": "jersey",
+    "12": "kangayam",
+    "13": "kankrej",
+    "14": "kenkatha",
+    "15": "khillar",
+    "16": "krishna_valley",
+    "17": "malnad_gidda",
+    "18": "nagori",
+    "19": "nimari",
+    "20": "ongole",
+    "21": "pulikulam",
+    "22": "rathi",
+    "23": "red_dane",
+    "24": "red_sindhi",
+    "25": "sahiwal",
+    "26": "tharparkar",
+    "27": "umblachery",
+    "28": "vechur"
+  },
+
+  "buffalo": {
+    "0": "alambadi",
+    "1": "banni",
+    "2": "bargur",
+    "3": "bhadawari",
+    "4": "jaffarabadi",
+    "5": "mehsana",
+    "6": "murrah",
+    "7": "nagpuri",
+    "8": "nili_ravi",
+    "9": "surti",
+    "10": "toda"
+  }
+}

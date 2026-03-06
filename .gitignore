@@ -1,0 +1,8 @@
+dataset/
+.ipynb_checkpoints/
+node_modules/
+__pycache__/
+*.h5
+*.model
+*.keras
+notebook/
