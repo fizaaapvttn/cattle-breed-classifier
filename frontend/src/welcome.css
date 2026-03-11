@@ -1,0 +1,33 @@
+.welcome-container{
+height:100vh;
+background:url("/gircowimg.jpg") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.overlay{
+background:rgba(0,0,0,0.5);
+padding:60px;
+border-radius:15px;
+text-align:center;
+color:white;
+}
+
+.overlay h1{
+font-size:60px;
+}
+
+.overlay h2{
+margin-top:10px;
+font-weight:300;
+}
+
+.overlay button{
+margin-top:30px;
+padding:12px 30px;
+font-size:18px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
