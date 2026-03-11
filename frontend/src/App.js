@@ -219,6 +219,7 @@ function App() {
         <div className="logo">🐄 Cattle Breed Classifier</div>
         <div className="nav-links">
           <Link to="/">Home</Link>
+   	  <a href="#detection">Detection</a>
           <Link to="/breed-info">Breed Info</Link>
           <Link to="/about-us">About Us</Link>
         </div>
