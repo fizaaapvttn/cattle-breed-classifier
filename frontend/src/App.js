@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from "react
 import BreedInfo from "./pages/BreedInfo";
 import AboutUs from "./pages/AboutUs";
 import "./App.css";
+import Detect from "./pages/Detect";
 
 /* ---------------- HOME PAGE COMPONENT ---------------- */
 function HomePage(props) {
