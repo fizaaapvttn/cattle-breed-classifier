@@ -7,25 +7,30 @@ import Detect from "./pages/Detect";
 
 /* ---------------- HOME PAGE COMPONENT ---------------- */
 function HomePage(props) {
+
   const navigate = useNavigate();
 
-const goToBreedInfo = () => {
-  if (props.result?.breed) {
-    const formattedName = props.result.breed.toLowerCase();
+  const goToBreedInfo = () => {
+    if (props.result?.breed) {
 
-    const breedMap = {
-      "jersey cow": "jersey cow female diary",
-      "red sindhi": "red_sindhi",
-      "krishna valley": "krishna_valley",
-      "malnad gidda": "malnad_gidda"
-    };
+      const formattedName = props.result.breed.toLowerCase();
 
-    const breedId = breedMap[formattedName] || formattedName;
+      const breedMap = {
+        "jersey cow": "jersey cow female diary",
+        "red sindhi": "red_sindhi",
+        "krishna valley": "krishna_valley",
+        "malnad gidda": "malnad_gidda"
+      };
 
-    navigate(`/breed-info/${breedId}`);
-  }
-};
-  return (
+      const breedId = breedMap[formattedName] || formattedName;
+
+      navigate(`/breed-info/${breedId}`);
+    }
+  };
+
+  const goToDetect = () => {
+    navigate("/detect");
+  };  return (
     <div className="home-page">
 
       {/* Info Panel */}
@@ -79,54 +84,9 @@ const goToBreedInfo = () => {
           Farmers and breeders can quickly get breed info and confidence
           scores, helping manage livestock more efficiently.
         </p>
-      </section>
-
-      {/* Upload & Camera Panel */}
-      <section className="upload-panel">
-        <h2>Check Your Cattle Breed</h2>
-        <div className="upload-container">
-
-          {/* Upload */}
-          <div className="upload-box">
-            <h3>Upload Image</h3>
-            <input type="file" onChange={props.handleFileChange} accept="image/*" />
-            {props.preview && <img src={props.preview} alt="preview" className="preview" />}
-          </div>
-
-          {/* Camera */}
-          <div className="camera-box">
-            <h3>Use Camera</h3>
-            {!props.cameraActive ? (
-              <button onClick={props.startCamera}>Start Camera</button>
-            ) : (
-              <>
-                <video ref={props.videoRef} width="300" height="225" />
-                <button onClick={props.capturePhoto}>Capture Photo</button>
-              </>
-            )}
-            <canvas ref={props.canvasRef} width="300" height="225" style={{ display: "none" }} />
-          </div>
-        </div>
-
-        <button onClick={props.handleSubmit} disabled={props.loading}>
-          {props.loading ? "Predicting..." : "Predict"}
+        <button onClick={goToDetect}>
+         Detect Your Cattle Breed
         </button>
-
-        {/* RESULT SECTION */}
-        {props.result && !props.result.error && (
-          <div className="result">
-            <h3>Breed: {props.result.breed}</h3>
-            <p>Confidence: {props.result.confidence}%</p>
-
-            <p className="know-more-link" onClick={goToBreedInfo}>
-              Know more about "{props.result.breed}"
-            </p>
-          </div>
-        )}
-
-        {props.result && props.result.error && (
-          <div className="error">{props.result.error}</div>
-        )}
       </section>
 
       {/* Popular Breeds Panel */}
@@ -220,37 +180,55 @@ function App() {
         <div className="logo">🐄 Cattle Breed Classifier</div>
         <div className="nav-links">
           <Link to="/">Home</Link>
-   	  <a href="#detection">Detection</a>
+   	  <Link to="/detect">Detection</Link>
           <Link to="/breed-info">Breed Info</Link>
           <Link to="/about-us">About Us</Link>
         </div>
       </nav>
+<Routes>
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <HomePage
-              handleFileChange={handleFileChange}
-              startCamera={startCamera}
-              capturePhoto={capturePhoto}
-              handleSubmit={handleSubmit}
-              preview={preview}
-              result={result}
-              loading={loading}
-              cameraActive={cameraActive}
-              videoRef={videoRef}
-              canvasRef={canvasRef}
-              popularBreeds={popularBreeds}
-            />
-          }
-        />
-        <Route path="/breed-info" element={<BreedInfo />} />
-        <Route path="/breed-info/:id" element={<BreedInfo />} />
-        <Route path="/about-us" element={<AboutUs />} />
-      </Routes>
-    </Router>
-  );
+<Route
+  path="/"
+  element={
+    <HomePage
+      handleFileChange={handleFileChange}
+      startCamera={startCamera}
+      capturePhoto={capturePhoto}
+      handleSubmit={handleSubmit}
+      preview={preview}
+      result={result}
+      loading={loading}
+      cameraActive={cameraActive}
+      videoRef={videoRef}
+      canvasRef={canvasRef}
+      popularBreeds={popularBreeds}
+    />
+  }
+/>
+
+<Route path="/detect"
+element={
+  <Detect
+    handleFileChange={handleFileChange}
+    startCamera={startCamera}
+    capturePhoto={capturePhoto}
+    handleSubmit={handleSubmit}
+    preview={preview}
+    result={result}
+    loading={loading}
+    cameraActive={cameraActive}
+    videoRef={videoRef}
+    canvasRef={canvasRef}
+  />
 }
+/>
 
+<Route path="/breed-info" element={<BreedInfo />} />
+<Route path="/breed-info/:id" element={<BreedInfo />} />
+<Route path="/about-us" element={<AboutUs />} />
+
+</Routes>
+</Router>
+);
+}
 export default App;
