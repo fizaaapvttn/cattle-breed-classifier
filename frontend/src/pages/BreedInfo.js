@@ -71,7 +71,7 @@ const breeds = [
     climate: "North Indian plains",
     usedFor: "Milk and farming",
     special: "Strong and productive",
-    image: "/harianacowimg.jpg"
+    image: "/harianacowimg3.jpg"
   },
   {
     id: "jersey cow female diary",
@@ -85,7 +85,7 @@ const breeds = [
     climate: "Moderate climates",
     usedFor: "Commercial dairy farming",
     special: "High butterfat milk (5%)",
-    image: "/jerseycowimg.webp"
+    image: "/jerseycowimg.jpeg"
   },
   {
     id: "kankrej",
@@ -99,7 +99,7 @@ const breeds = [
     climate: "Hot and dry",
     usedFor: "Milk and heavy draught work",
     special: "Strong curved horns",
-    image: "/Kankrejcowimg.jpg"
+    image: "/kankrejcowimg (2).jpg"
   },
   {
     id: "khillar",
@@ -113,7 +113,7 @@ const breeds = [
     climate: "Dry zones",
     usedFor: "Traditional farming",
     special: "Tall and muscular body",
-    image: "/khillaricowimg.jpg"
+    image: "/khillarcowimg.jpg"
   },
   {
     id: "krishna_valley",
@@ -155,7 +155,7 @@ const breeds = [
     climate: "Tropical",
     usedFor: "Breeding and farming",
     special: "Exported worldwide for breeding",
-    image: "/ongolecowimg.jpg"
+    image: "/ongolecowimg.png"
   },
   {
     id: "rathi",
@@ -169,7 +169,7 @@ const breeds = [
     climate: "Arid regions",
     usedFor: "Milk production in desert areas",
     special: "Excellent heat tolerance",
-    image: "/rathicowimg2.jpeg"
+    image: "/rathicowimg.jpg"
   },
   {
     id: "red_sindhi",
